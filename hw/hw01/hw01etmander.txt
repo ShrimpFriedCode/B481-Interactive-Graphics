@@ -1,0 +1,45 @@
+Ethan Anderson (etmander) 
+B481 / Spring 2020, Homework 1
+
+B.
+
+	1) for A -> B: Bf = Af * X where X is a conversion factor. The same goes for Bb = Ab * X as these points are just ends of the scale and have no mathmatical significance beyond that. 
+	   for B -> A: Af = Bf * Y where Y is the inverse of X, reverting the calculation. 
+
+	2) F(t) = (t * 180) + 32
+	   C(t) = t * 100
+
+C. 
+	Q: In computer graphics, objects such as spheres are usually approximated by
+		simpler objects constructed from flat polygons (polyhedra). Using lines of
+		longitude and latitude, define a set of simple polygons that approximate a
+		sphere centered at the origin. Can you use only quadrilaterals or only triangles?
+	
+	A: The areas where the lat and long intersect can create areas where we may substitute in polygons. Using quadrilaterals, for most of the sphere we could fill in the shape created by 4 intersecting points. 
+		However, we run into issues at the top and bottom of the sphere, where there may not be 4 points to define a shape, as the latitude has an origin point where all lines converge while the longitude radiates from this
+		point. This creates a scenario wherein there may only be 3 points to define a shape; the origin of the latitude and the two intersecting points of a respective longitude line. Thus, only triangles can be implemented
+		to approximate a sphere. Instead of using 4 intersecting points to define a quadrilateral shape, that quadrilateral space will be split with a diagonal line, forming two respective triangles to fill. \
+
+D. 
+	Q: A certain graphics system with a CRT display is advertised to display any 4 of
+		64 colors. What does this statement tell you about the framebuffer and about
+		the quality of the monitor?
+
+	A: If the system can display 4 colors, then we must solve 2^x=4, where x represents the depth of the framebuffer. Here x is equal to 2, so we can surmise that this system's framebuffer is 2 bits deep.
+		Using the equation from 2.5.2 in the textbook: "Suppose that we can display each color component with a precision of m bits; that is, we can choose from 2m reds, 2m greens, and 2m blues. Hence, we can produce any of 2^3m 			colors on the display", knowing we can produce 64 colors on the display, we can fill in the equation with m = 2 to read: 64 = 2^(3 * 2), meaning we can choose from 4 reds, 4 greens, and 4 blues (2^2 = 4). With such 				incredibly limited choice, we can surmise that this CRT display is likely of low quality. 
+
+E. 
+	a)
+	
+		Q: What is the stage that precedes Primitive Assembly, and what is the stage that follows Primitive Assembly?
+	
+		A: The stage the precedes Primitive Assembly is Vertex Processing and the following stage is Rasterization. 
+
+	b)
+		
+		Q: What are the primitives that get assembled in this stage? Provide the names of at least two such primitives.
+
+		A: The primitives that get assembled in this stage are referred to as 'Base Primitives", which are individual primitives from a vertex stream resulting from the prior stage.
+			Two such primitives are lines, and triangles. 
+
+	
