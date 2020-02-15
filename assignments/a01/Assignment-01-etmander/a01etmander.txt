@@ -1,0 +1,35 @@
+B481 / Spring 2020, Assignment 01.
+name: Ethan Anderson
+username: etmander
+
+Unity enviornment:
+
+-version used is 2019.3.1f1
+
+-C# files included:
+--DragObject.cs
+--LineUtility.cs
+--ManySegmentPositionLines.cs
+--SingleSegmentPositionLines.cs
+
+-Assets:
+--ClosestPointInteractive.unity (project scene)
+
+Parts completed (all parts):
+-created scene and all scene objects
+--associated scene objects with respective C# scripts
+-TODO sections in code
+--LineUtility.cs:
+---DirectionNormal()
+---LineSegmentNormal()
+---ClosestPointOnLine()
+---ClosestPointOnSegment()
+---ClosestPointOnPolygon()
+--ManySegmentPositionLines.cs:
+---Added serialized fields for polygon adaptation of line segment
+
+Items of note:
+
+I had a difficult time deciphering the meaning of localX in the closestPoint functions, and all my interpretations led to buggy results.
+I therefor decided to go an alternate route to determining if we need to snap to the vertex or subject line. I calculate the distance from the segment start -> calculated point on line -> end of line segment. I add all these values, and, if our calculated point is on our segment, the values should equal the length of the segment. If there is a discrepency, then we need to snap to a chosen segment vertex as we are off the line. I found this method a lot less painstaking than trying to debug localX. 
+
