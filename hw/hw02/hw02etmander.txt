@@ -1,0 +1,45 @@
+B481 / Spring 2020, Homework 02, ethan andersone (Etmander)
+
+B.
+
+	4.20 (7th ED)
+		Q: Three vertices determine a triangle if they do not lie in the same line. Devise a 
+			test for collinearity of three vertices.
+
+		A: Since if the three vertices are colinear the area of their triangle will be 0, we can caluculate the area of the triangle 			they form to determine colinearity. We take half of the determinant formed by the points of the vertices we will be 			testing to determine the area of the triangle they form. 
+
+	4.30 (7th ED)
+		Q: In principle, an object-oriented system could provide scalars, vectors, and points as basic types.
+			None of the popular APIs does so. Why do you think this is the case?
+
+		A: Perhaps beacuse this allows for more explicit definition and use cases for desired basic types. 
+	
+C.
+	1.
+		Q: What is the mathematical expression for the normalized normal vector to the:
+			subject line that goes through two 2D points P1=(x1,y1) and P2=(x2,y2) ?
+
+		A: The normalized normal vector to the subject line P1 and P2 = 
+			
+			(x1 - x2, y1-y2)/ (|(x1 - x2, y1-y2)|)
+	
+	2.
+		Q: Given a test point P0, show how to compute the signed distance v (i.e. a scalar value) between:
+			the projection of P0= (px,py) onto the subject line, and one of the two points (x1,y1)
+			that define the subject line ?
+
+		A:
+
+	3.
+		Q: What is the distance h from: the test point P0 to the subject line?
+
+		A: 
+
+D.
+	1.
+		a.
+			[1,     0,        0   ]    [x]   [x]
+			[0, -cos(30),  sin(30)]  * [y] = [-ycos(30) + ysin(30)]
+			[0, -sin(30), -cos(30)]    [z]   [-ysin(30) - ycos(30)]
+		
+		b. 

@@ -1,0 +1,47 @@
+B481 / Spring 2020, Homework 03
+Ethan Anderson, etmander
+
+
+C)
+
+3.
+pair A: TFFT, FTTF : more processing is required
+pair B: TFFT, FFTF : more processing is required
+pair C: FFFF, FFFF : completely visible
+pair D: FTTF, FFTT : completely invisible
+pair E: FFFT, FFFF : partially visible
+
+
+D)
+
+1. For a single-segment 3D Cubic spline, there will be 12 independent constant parameters, with these constants being the X, Y, and Z coordinates of the 4 spline control points. 
+
+2. 2nd derivative is matched
+
+3. for the two segments to be contiguous, the verticies would need to be numbered: 
+[0, 1, 2, 3], [2, 3, 4, 5]
+No derivatives match automatically
+
+4. for the two segments to be contiguous, the verticies would need to be numbered: 
+[0, 1, 2, 3], [1, 2, 3, 4]
+1st derivative is matched
+
+E)
+
+pseudocode:
+
+interpolate between the edges for our value (along the x axis):
+color = (x(right edge) + (maxX -x)left edge)
+where the respective edges are computed as follows:
+Interpolate the left and right edge along the y axis:
+(y(blue) + (maxY-y)white) for the left edge, and (y(red) + (maxY-y)green) for the right edge
+
+
+Shadertoy Code:
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    vec2 uv = fragCoord/iResolution.xy;
+    vec3 color = uv.x * (uv.y * vec3(1,0,0) + (1.0-uv.y) * vec3(0,1,0)) + (1.0-uv.x) * (uv.y * vec3(0,0,1) + (1.0-uv.y) * vec3(1,1,1));
+    fragColor = vec4(color, 1);
+}
