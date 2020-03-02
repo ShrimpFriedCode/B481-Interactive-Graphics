@@ -1,0 +1,55 @@
+B481 / Spring 2020, Homework 04
+Ethan Anderson
+etmander
+
+B.
+
+	Q: We defined an instance transformation as the product of a translation, a rotation,
+and a scaling. Can we accomplish the same effect by applying these three
+types of transformations in a different order?
+
+	A: Yes, we can accomplish the same effect by applying these three types of transformations in a different order. This is because these three transformations are not dependent on one another. That is to say, rotation is not dependent on scaling and vice-versa, making all transformations transitive. 
+
+C.
+	a.
+		Q: Write down the 4x4 right-handed rotation matrix that leaves the y-axis fixed. 
+
+		A: [ cos R  0  sin R  0]
+		   [  0     1    0    0]
+		   [-sin R  0  cos R  0]
+		   [  0     0    0    1]
+
+	b. 
+		Q: Write down the 4x4 right-handed rotation matrix that leaves the z-axis fixed.
+		
+		A: [cos R -sin R  0  0]
+		   [sin R  cos R  0  0]
+	  	   [ 0      0     1  0]
+		   [ 0      0     0  1]
+	
+	c.
+		Q: Write down the 4x4 ModelView matrix performing a right-handed rotation that leaves fixed in space every point on the line that passes from the point (1,1,0) to (1,1,1).
+
+		A: Partial answer
+			unit vector = <0, 0, 1>
+			P1 = (1, 1, 0)
+			P2 = (1, 1, 1)
+			
+
+D.
+	a. 
+		Q: Given a point in homogeneous coordinates, i.e., P=(x,y,z,1) in a 3D scene, consider the projection of the point P a ray to the eye point (0,0,f) through the screen point (u, v), in the z = 0 plane, where f is the focal 			length. Assume OpenGL orientation conventions, with the view direction pointing down the negative z axis. Write down the expressions of u and v as functions of x, y, z, and f.
+		
+		A: As this is what is commonly known as the canonical case since our eye point is at [0,0,f] and our Z=0, with our object at the homogeneous coords [x,y,z,1], the equations for u and v become:
+			u = (f * Px)/(f-Pz)  
+			v = (f * Py)/(f-Pz)
+
+	b.
+		Q: Repeat the above question for an eye point at (0, 0, 0) and screen plane at z = -f
+
+		A: This question is similar to the default perspective projection in OpenGL, as the camera (eye point) is centered at the origin of the scene. 
+		   u = (f * Px)/(-Pz)
+		   v = (f * Py)/(-Pz)
+		
+		   as f = Cz - SPz (C = eye point,  SP = screen plane). f = 0 - (-f), f = f. 
+	           Subject distance to eye point = Cz - Pz, = 0 - Pz = -Pz
