@@ -1,0 +1,21 @@
+B481 / Spring 2020, Assignment 02
+Ethan Anderson
+etmander
+
+I used Unity 2019.3.1f1 Personal as my enviornment. 
+c# files used: 
+- DragObject.cs
+--code resued from a01 to drag points. no changes made
+
+-LineUtility.cs
+--code reused from a01. Added cyrus beck function to compute clipping points given a subject line and a hexagon as per a02
+
+-ManySegmentPositionLines.cs
+--code reused from a01. Added a dew lines to support visualization of cyrus-beck computed clipping.
+
+-SingleSegmentPositionLines.cs
+--code reused from a01. Unchanged and unused in a02.
+
+I completed all parts of the assignment, allowing for a user defined subject line and a six vertex heagon to compute the clipping of a line via cyrus-beck.
+
+Note that this project started as a direct clone of a01, so there is a left over script file and possibly a few other unused elements present elsewhere, especially in the code. The most significant area is the CyrusBeck() function in LineUtility.cs. starting at line 45.
