@@ -1,0 +1,16 @@
+B481 / Spring 2020 / Assignment 03
+Ethan Anderson (etmander)
+
+1. Using Unity enviornment 2019.3.1f1 Personal
+Script files included: 
+	ManySegmentPositionLines.cs -- general overall (main) code loop. 
+		handles button clicks, and calling of linerender functions
+
+	LineUtility.cs -- Utility for main code loop. Handles drawing of splines.
+	DragObject.cs -- handles dragging of control points.
+
+No particular assets used outside of default Unity gameObjects (sprites, UI button, linerenderer)
+
+2. I completed parts A and B of assignmet 3 (all parts)
+
+3. Finished this assignment before I realized skeleton code was provided. Spent more time than I wanted trying to figure out the Matrix4x4 object. Encountered one major bug where I had the spline matricies input in the worng orientation. 
