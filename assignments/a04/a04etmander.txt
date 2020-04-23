@@ -1,0 +1,15 @@
+B481 / Spring 2020 / Assignment 04
+Ethan Anderson (etmander)
+
+1. Using Unity enviornment 2019.3.1f1 Personal
+Script files included: 
+	SplineSegmentGPUCompute.cs -- general overall (main) code loop. Provided.
+	SplineShader.shader -- Shander for rendering spline curve on GPU.
+	SplineParameters.cs -- defines spline type data type.
+	DragObject.cs -- handles dragging of control points.
+
+No particular assets used outside of default Unity gameObjects (sprites, UI button)
+
+2. I completed part A of assignment 4. I ran out of time attempting part B, and am turning in just my part A solution.
+
+3. I have just now noticed a comment on canvas directing me to switch my unity version to 2019.2.14. I will make this change for following assignments. I was unable to complete part B due to my misunderstanding of spline derivatives and how to draw them into the scene. 
