@@ -1,0 +1,35 @@
+"B481 / Spring 2020", "Assignment 05"  Ethan Anderson, etmander
+
+Answers:
+
+B.
+	1. The intensity of the light as perceiced by the observer is independent from the observer's position. The intensity of the diffuse reflected light coming from the area A is entierly dependent on the angle of the light source to are A's surface normal. 
+
+	2. 
+		a. An object's ambient color approximates the color of the object when not directly illuminated by a light source. What is reflected is the color determined by light reflections from elsewhere in the scene, rather than the direct illumination provided by a light source.
+
+		b. diffuse illumination at point Pworld = color of light at Lworld * color of object at Pworld * max(0, dotProduct(((Transpose of the inverse of the ModelView Matrix) * N), L)). L = Lworld - Pworld / sqrt((Lworld.x - Pworld.x)^2+(Lworld.y - Pworld.y)^2) The component essentially vanishes when the max() equation equal 0. I.e when the Light source is more or exactly parrallel to the surface of Pworld.
+
+2. 
+For the flat shading model, one normal per face is required.
+
+The feature of contemporary graphics processors I would use for a hardware-accelerated Gouraud shading interpolation would be compute kernals, using the GPU to accelerate vertex based calculations of normals and interpolation. 
+
+geometrical primitives necessary as input data for a programmable pipeline to compute diffuse lighting are the points of the vertex we're calculating lighting for, and the light source. In the Gouraud shading process, the primative points help define the illumination at each point on the surface of an object. The output of the shading process is a bilinear interpolation of the endpoint verticies for the surface of the the polygon, determining the shading at each point.
+
+C.
+	1. Specular at vertex Pworld = Specular light * Color of material * max(0, dot(B, N))^f. B = (C + L) / ||C + L||. C = Xc - P / sqrt((Xc.x - P.x)^2+(Xc - P.y)^2). L = Lworld - Pworld / sqrt((Lworld.x - Pworld.x)^2+(Lworld.y - Pworld.y)^2. f = "shininess" of material. 
+
+	2. One condition wherein the Phong specularity is zero is when the Lambertian component (max(0,L·N)) is zero. This signifies the viewed vertex is not getting direct light from a source, and thus would have no specularity of a light source. 
+	Another condition would be when viewer C is directly parallel and even with P's surface. The specularity would not be observed "bouncing" in this instance, and thus would not have any effect on the lighting. 
+
+Notes:
+
+Unity version 2019.3.1f1
+Files: SplineParamaters.cs; essentially spline matricies
+SplineSegmentGPUCompute; handles animation of all objects, passes vars to shader
+SplineVertexShader; shader calculations.
+
+I completed all parts, although I think there may some issues with the display of specularity.
+
+**Note**:: to change between vertex and fragment shader, you must select the dropdown in the SplineControl GameObject in the Spline Segment GPU Compute script section labeled "Renderer". 
