@@ -1,0 +1,37 @@
+"B481 / Spring 2020", "Final Project" Ethan Anderson etmander
+
+D.
+	1.  [(x2 - x1) ⨯ (x3 - x2)] = (-z3y1+y2y1+z3y2-y2z1-z2y3+z1y3, z3x1-z2x1-z3x2+x2z1+z2x3-z1x3, y2x1-x1y3-x2y1-y2x3+y1x3+x2y3)
+
+	2.  [(x2 - x1) ⨯ (x3 - x2)] ,  [(x1 - x3) ⨯ (x3 - x2)] ,  [(x2 - x1) ⨯ (x1 - x3)],
+		-[(x2 - x1) ⨯ (x3 - x2)] ,  -[(x1 - x3) ⨯ (x3 - x2)] ,  -[(x2 - x1) ⨯ (x1 - x3)]
+
+E. 
+	1. 
+
+F.
+
+--------------------------- (Didn't answer parts  E-F) ------------------
+
+!!HELP!!
+Controls: To change camera mode, select "MainScene" in the Hierarchy tab. In the inspector, change the variable "View Mode" under "Camera Control" in the Control Script. (Orbit/Doom)
+-Orbit: orbit around the central object
+-Doom: "wasd" controls to navigate through scene
+
+Lighting: In the Control Script section for the inspector of MainScene, there are several optiosn to change functionality of scene lights. "Power 1/ Power 2" turns each light on or off respectivley. You can also adjust each light's brightness or intensity. 
+
+Rendering: In the Control Script section for the inspector of MainScene, under the Scene Rendering catagory you can swithc between vertex and fragment shader rendering.
+
+Under each item (i.e "icosahedron"), in the inspector tab you will find the GPUCompute script. In this script, you cna change the object's color, and the material's properties. By adjusting the 3 separate intensities, you can change how the object reacts to light. 
+!!!! 
+
+
+Unity environment: 2019.3.1f1
+Files: Camera Doom Control - file for wontrolling camera in a 'wasd' method, similar to the video game DOOM.
+Camera Orbit - orbits the camera about a centeral point
+Control Script - scene control script responsible for animation, setting global variables, and the state of scene lighting (on/off), render type (vertex/fragment), light intensity etc.
+GPUCompute - responsible for passing object specific factors to that object's shader material (color, material coefficients, position etc.)
+ShaderFinal - shader used for all materials. Uses light equation in both vertex and fragment, depending on set rendering mode for scene. Allows for individual object tweaks to material coefficients passed from GPUCompute.
+
+I completed all parts of the practical section, implementing different light sources, different objects with distinct properties, animations, and custom shader. 
+
